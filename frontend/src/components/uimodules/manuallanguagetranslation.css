@@ -1,0 +1,149 @@
+.language-translation-container {
+  /* max-width: 650px; */
+  margin: 32px auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+
+.language-translation-title {
+  text-align: center;
+  color:#4C3494;;
+  margin-bottom: 24px;
+}
+
+.language-translation-uploader {
+  border: 2px dashed #4C3494;;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  margin-bottom: 24px;
+  background: #e6dbfa;
+}
+
+.language-translation-uploader-active {
+  border-color: #4C3494;;
+  background: #e6dbfa;
+}
+
+.language-translation-upload-label {
+  cursor: pointer;
+  color:#4C3494;;
+  font-weight: 500;
+}
+
+.language-translation-upload-text {
+  font-size: 18px;
+}
+
+.language-translation-selected-files {
+  margin-top: 12px;
+  color: #333;
+}
+
+.language-translation-file-details {
+  margin-bottom: 20px;
+  background: #e6dbfa;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #e3eaf2;
+}
+
+.language-translation-file-details-title {
+  margin: 0;
+  color:#4C3494;;
+}
+
+.language-translation-file-details-info {
+  margin-top: 8px;
+  display: flex;
+  gap: 24px;
+}
+
+.language-translation-options {
+  margin-bottom: 24px;
+  background: #e6dbfa;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #e6dbfa;
+  overflow: auto;
+}
+
+.language-translation-option-row {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.language-translation-pages-input {
+  margin-left: 12px;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 120px;
+}
+
+.language-translation-language-select {
+  margin-left: 12px;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.language-translation-process-btn {
+  margin-top: 18px;
+  padding: 10px 28px;
+  background: #4C3494;;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(25,118,210,0.08);
+}
+
+.language-translation-table-section {
+  margin-top: 32px;
+}
+
+.language-translation-table-title {
+  color: #4C3494;;
+}
+
+.language-translation-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #e6dbfa;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(25,118,210,0.04);
+}
+
+.language-translation-table th,
+.language-translation-table td {
+  padding: 10px 8px;
+  border: 1px solid #e6dbfa;;
+  text-align: left;
+}
+
+.language-translation-table th {
+  background: #e6dbfa;
+}
+
+.language-translation-table-empty {
+  padding: 18px;
+  color: #888;
+  text-align: center;
+}
+
+.language-translation-remove-btn {
+  background: #fff;
+  color: #d32f2f;
+  border: 1px solid #d32f2f;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
