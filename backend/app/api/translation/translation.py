@@ -9,7 +9,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 import json
 
 
-# Load environment variables from .env file
+# Load environment variables from .env
 load_dotenv()
 router = APIRouter()
 
