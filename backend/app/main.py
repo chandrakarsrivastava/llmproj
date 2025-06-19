@@ -1,28 +1,19 @@
-
 from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
-import os
 from app.api.translation import translation
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-# Your backend APIs first
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],  # your React dev server
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 @app.get("/api/hello")
 def hello():
     return {"message": "Hello from FastAPI"}
 
-# Include translation router
 app.include_router(translation.router, prefix="/api/translation")
-
-# Then mount static files after API
-frontend_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../frontend/build"))
-app.mount("/static", StaticFiles(directory=os.path.join(frontend_path, "static")), name="static")
-
-# app.mount("/", StaticFiles(directory="app/static", html=True), name="static")
-
-
-# Catch-all route to serve index.html (for React frontend)
-@app.get("/{full_path:path}")
-async def serve_react_app(full_path: str):
-    return FileResponse(os.path.join(frontend_path, "index.html"))

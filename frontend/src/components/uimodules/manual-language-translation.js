@@ -61,8 +61,8 @@ const ManualLanguageTranslation = () => {
     console.log('uploadFileToBackend called', file, language);
     formData.append('file', file);
     formData.append('language', language);
-    try {
-      const response = await fetch('/api/translation/upload', {
+    try {  
+      const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/translation/upload`, {
         method: 'POST',
         body: formData,
       });

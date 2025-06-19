@@ -28,21 +28,21 @@ async def upload_translation_file(file: UploadFile = File(...), language: str = 
 
     # Read file content
     file_content = await file.read()
-
+    print(f"Uploaded")
     # Upload to S3
-    try:
-        response = s3.put_object(Bucket=bucket_name, Key=s3_key, Body=file_content, ContentType=file.content_type)
-        print(f"Uploaded {file.filename} to S3 bucket {bucket_name} as {s3_key}")
-        print("S3 response:", response)
-    except Exception as e:
-        print("S3 upload error:", e)
-        return JSONResponse({"error": str(e)}, status_code=500)    
+    # try:
+    #     response = s3.put_object(Bucket=bucket_name, Key=s3_key, Body=file_content, ContentType=file.content_type)
+    #     print(f"Uploaded {file.filename} to S3 bucket {bucket_name} as {s3_key}")
+    #     print("S3 response:", response)
+    # except Exception as e:
+    #     print("S3 upload error:", e)
+    #     return JSONResponse({"error": str(e)}, status_code=500)    
 
-    return JSONResponse({
-        "filename": file.filename,
-        "language": language,
-        "s3_url": f"https://{bucket_name}.s3.amazonaws.com/{s3_key}"
-    })
+    # return JSONResponse({
+    #     "filename": file.filename,
+    #     "language": language,
+    #     "s3_url": f"https://{bucket_name}.s3.amazonaws.com/{s3_key}"
+    # })
 
 
 @router.post("/extract_text")
